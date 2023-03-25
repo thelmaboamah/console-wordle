@@ -49,8 +49,6 @@ export const checkGuess = (guessWord, answerWord) => {
 };
 
 const createLetterCounter = (word) => {
-  // considered validating this input but since answer not a
-  // user provided input, it's perhaps OK to skip that
   const letterCounter = {};
   for (let letter of word) {
     if (Object.hasOwn(letterCounter, letter)) {

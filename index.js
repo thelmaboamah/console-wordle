@@ -45,7 +45,6 @@ async function playWordle() {
   }
 
   while (result != CORRECT_GUESS && triesRemaining > 0) {
-    console.log(answerWord);
     let input = await readLineAsync(
       `Enter a guess. You have ${triesRemaining} tries left.\n`
     );
@@ -65,7 +64,7 @@ async function playWordle() {
       } tries.\n`
     );
     // check if player wants to play again and call playWordle or exit otherwise
-    const playAgain = readLineAsync(
+    const playAgain = await readLineAsync(
       "Want to guess another word? Enter y or n."
     );
     // Could do better validation here but going to assume user entered either y or n

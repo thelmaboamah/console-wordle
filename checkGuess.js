@@ -16,19 +16,15 @@
  *
  * some validations/error check -
  * if length of guess is not 5, throw error
- * if guess not a string, throw error
  * if guess includes characters that are not lower case letters (use a regex to check), throw errors
  *  */
 
 export const checkGuess = (guessWord, answerWord) => {
-  if (typeof guessWord != "string") {
-    throw new Error("Please provide a string");
-  }
   if (guessWord.length != 5) {
-    throw new Error("Your guess must be 5 letters long");
+    throw new Error("⛔️ Your guess must be 5 letters long");
   }
   if (/^[a-z]+$/.test(guessWord) == false) {
-    throw new Error("You must enter a valid, lower case string");
+    throw new Error("⛔️ You must enter a valid, lower case string");
   }
 
   const result = ["W", "W", "W", "W", "W"];

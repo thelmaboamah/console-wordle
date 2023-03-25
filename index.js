@@ -37,6 +37,7 @@ async function playWordle() {
         triesRemaining > 1 ? "tries" : "try"
       } left.\n`
     );
+    input = input.toLowerCase();
     try {
       result = checkGuess(input, answerWord);
       console.log(result);

@@ -24,7 +24,7 @@ export const checkGuess = (guessWord, answerWord) => {
     throw new Error("⛔️ Your guess must be 5 letters long");
   }
   if (/^[a-z]+$/.test(guessWord) == false) {
-    throw new Error("⛔️ You must enter a valid, lower case string");
+    throw new Error("⛔️ You must enter a valid string");
   }
 
   const result = ["W", "W", "W", "W", "W"];

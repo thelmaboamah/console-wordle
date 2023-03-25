@@ -46,7 +46,7 @@ async function playWordle() {
     }
   }
 
-  if (triesRemaining) {
+  if (result == CORRECT_GUESS) {
     console.log(
       `Congrats! 🎉 You guessed the word ${answerWord.toUpperCase()} in ${
         TRIES - triesRemaining

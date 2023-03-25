@@ -20,7 +20,7 @@ async function playWordle() {
   const CORRECT_GUESS = "GGGGG";
 
   let answerWord;
-  let triesRemaining = 6;
+  let triesRemaining = TRIES;
   let result;
 
   try {

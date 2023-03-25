@@ -15,19 +15,6 @@ const readLineAsync = (msg) => {
   });
 };
 
-/**
- * Set triesRemaining to 6
- * Initialize guess to undefined
- * Call checkGuess and log results to console
- * while the answer is not GGGGG and tries is > than 0,
- *      Ask user to enter a word and show tries remaining
- *      do try catch, call checkGuess with user input and set answer to the result
- *      decrement tries
- *      log errors to console in catch block
- *
- *
- */
-
 async function playWordle() {
   const TRIES = 6;
   const CORRECT_GUESS = "GGGGG";
@@ -46,7 +33,9 @@ async function playWordle() {
 
   while (result != CORRECT_GUESS && triesRemaining > 0) {
     let input = await readLineAsync(
-      `Enter a guess. You have ${triesRemaining} tries left.\n`
+      `Enter a guess. You have ${triesRemaining} ${
+        triesRemaining > 1 ? "tries" : "try"
+      } left.\n`
     );
     try {
       result = checkGuess(input, answerWord);
@@ -65,19 +54,22 @@ async function playWordle() {
     );
     // check if player wants to play again and call playWordle or exit otherwise
     const playAgain = await readLineAsync(
-      "Want to guess another word? Enter y or n."
+      "Want to guess another word? Enter y or n:"
     );
     // Could do better validation here but going to assume user entered either y or n
     if (playAgain == "y") {
       playWordle();
     } else {
-      console.log("Okay, see ya!");
+      console.log("Okay, thanks for playing! 👋");
       process.exit(0);
     }
   } else {
-    console.log("Sorry, you're out of tries. Run npm start to play again!");
+    console.log(
+      `Sorry, you're out of tries. The word was ${answerWord.toUpperCase()}.\nRun npm start to play again!`
+    );
     process.exit(0);
   }
 }
 
+console.log("Welcome to my console wordle game! 👋 LET'S START!");
 playWordle();

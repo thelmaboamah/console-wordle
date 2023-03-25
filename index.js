@@ -48,14 +48,15 @@ async function playWordle() {
   }
 
   if (result == CORRECT_GUESS) {
+    const totalTries = TRIES - triesRemaining;
     console.log(
-      `Congrats! 🎉 You guessed the word ${answerWord.toUpperCase()} in ${
-        TRIES - triesRemaining
-      } tries.\n`
+      `Congrats! 🎉 You guessed the word ${answerWord.toUpperCase()} in ${totalTries} ${
+        totalTries > 1 ? "tries" : "try"
+      }.\n`
     );
     // check if player wants to play again and call playWordle or exit otherwise
     const playAgain = await readLineAsync(
-      "Want to guess another word? Enter y or n:"
+      "Want to guess another word? Enter y or n: "
     );
     // Could do better validation here but going to assume user entered either y or n
     if (playAgain == "y") {

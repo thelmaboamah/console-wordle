@@ -1,10 +1,11 @@
 {
   "name": "command-line-wordle",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Node.js command line wordle game",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "node checkGuess.test.js"
   },
   "author": "Thelma Boamah",
   "license": "ISC",

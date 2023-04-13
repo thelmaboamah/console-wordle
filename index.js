@@ -1,6 +1,6 @@
 import { createInterface } from "readline";
 import { getRandomWord } from "./words.js";
-import { checkGuess } from "./checkGuess2.js";
+import { checkGuess } from "./checkGuess.js";
 
 const readline = createInterface({
   input: process.stdin,

@@ -1,4 +1,4 @@
-import { checkGuess } from "./checkGuess2.js";
+import { checkGuess } from "./checkGuess.js";
 
 console.log(
   `tasty = WGWGW and result is ${checkGuess("tasty", "earth")}`,
